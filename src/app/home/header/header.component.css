@@ -1,0 +1,40 @@
+.presentation{
+ width: 50%;
+}
+
+.logo{
+  width: 50%;
+}
+
+.logo img{
+  float: right;
+  width: 165px;
+}
+
+.hello{
+  font-size: 25px;
+}
+
+.office {
+  font-size: 35px;
+  font-weight: 700;
+}
+
+.description {
+  font-size: 18px;
+}
+
+.social-networks {
+  width: 30%;
+}
+
+.background{
+  height: 200px;
+  background: linear-gradient(279.56deg, rgba(255, 201, 220, 0.05) 13.79%, rgba(255, 163, 195, 0.6) 34.18%, rgba(255, 136, 229, 0.8) 50.02%);
+  filter: blur(160px);
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+
+.header{
+  height: 100vh;
+}

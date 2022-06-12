@@ -1,0 +1,13 @@
+.card-body img{
+  width: 100px;
+  border-radius: 50%;
+}
+
+.card-title{
+  color: #5B5B5B;
+}
+
+.card-text:last-child {
+  height: 100px;
+  color: #969696;
+}

@@ -1,0 +1,6 @@
+#portfolio{
+  position: relative;
+  background: linear-gradient(279.56deg, rgba(255, 201, 220, 0.05) 13.79%, rgba(255, 163, 195, 0.6) 34.18%, rgba(255, 136, 229, 0.8) 50.02%);
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+  height: 100vh;
+}

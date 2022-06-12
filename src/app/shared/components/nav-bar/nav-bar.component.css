@@ -1,0 +1,19 @@
+.logo{
+
+}
+
+.logo img{
+  width: 65px;
+}
+
+.logo-name{
+  font-weight: 700;
+}
+
+.logo-tag{
+  font-size: 12px;
+}
+
+.navbar-collapse{
+  flex-grow: 0;
+}
