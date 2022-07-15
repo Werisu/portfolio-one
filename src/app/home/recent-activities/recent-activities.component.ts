@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GithubService } from 'src/app/services/github.service';
 
 @Component({
   selector: 'app-recent-activities',
@@ -7,9 +8,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecentActivitiesComponent implements OnInit {
 
-  constructor() { }
+  public activities: any;
+
+  constructor(private githubService: GithubService) { }
 
   ngOnInit(): void {
+    this.getEvents();
+  }
+
+  getEvents(){
+    this.githubService.getEvents().subscribe({
+      next: value => {
+        let pushOnlyList = [];
+
+        for (const key in value) {
+          if (value[key].type == 'PushEvent') {
+            pushOnlyList.push(value[key]);
+          }
+        }
+
+        this.activities = pushOnlyList
+        console.log(this.activities);
+      },
+      error: e => console.log
+    })
   }
 
 }

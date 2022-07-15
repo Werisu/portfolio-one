@@ -1,10 +1,11 @@
 <h3>Atividades Recentes</h3>
 
-<div class="d-flex text-muted pt-3">
-  <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"></rect><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
+<div class="d-flex text-muted pt-3" *ngFor="let activity of activities">
+  <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"></rect><text x="25%" y="50%" fill="#ffffff" dy=".3em">{{activity.actor.login[0]}}</text></svg>
+  <!-- <img [src]="activity.actor.avatar_url" class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" alt="avatar"> -->
 
   <p class="pb-3 mb-0 small lh-sm border-bottom">
-    <strong class="d-block text-gray-dark">@username</strong>
-    Some representative placeholder content, with some information about this user. Imagine this being some sort of status update, perhaps?
+    <strong class="d-block text-gray-dark">@{{activity.actor.display_login}}</strong>
+    {{activity.type == 'PushEvent' ? 'Push' : activity.payload?.ref_type ?? 'started'}} - {{activity.type == 'PushEvent' ? activity.payload?.commits[0].message : activity.payload?.description ?? 'sem descrição'}}
   </p>
 </div>
