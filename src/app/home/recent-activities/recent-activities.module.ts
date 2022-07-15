@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { RecentActivitiesRoutingModule } from './recent-activities-routing.module';
 import { RecentActivitiesComponent } from './recent-activities.component';
+import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { RecentActivitiesComponent } from './recent-activities.component';
   ],
   imports: [
     CommonModule,
-    RecentActivitiesRoutingModule
+    RecentActivitiesRoutingModule,
+    NgbPaginationModule
   ],
   exports: [
     RecentActivitiesComponent

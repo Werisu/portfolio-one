@@ -9,6 +9,7 @@ import { GithubService } from 'src/app/services/github.service';
 export class RecentActivitiesComponent implements OnInit {
 
   public activities: any;
+  page = 1;
 
   constructor(private githubService: GithubService) { }
 
