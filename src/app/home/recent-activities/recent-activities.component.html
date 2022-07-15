@@ -10,4 +10,4 @@
   </p>
 </div>
 
-<ngb-pagination [collectionSize]="70" [(page)]="page" aria-label="Default pagination"></ngb-pagination>
+<ngb-pagination [collectionSize]="collectionSize" [pageSize]="pageSize" [(page)]="page" (pageChange)="refreshCountries()" aria-label="Default pagination"></ngb-pagination>
