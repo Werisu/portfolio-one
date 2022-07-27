@@ -8,7 +8,7 @@ import { GithubService } from 'src/app/services/github.service';
 })
 export class RecentActivitiesComponent implements OnInit {
 
-  public activities: any;
+  public activities: any[] = [];
   page = 1;
   pageSize = 4;
   collectionSize:any;
@@ -20,6 +20,7 @@ export class RecentActivitiesComponent implements OnInit {
   }
 
   getEvents(){
+    let order = 1;
     this.githubService.getEvents().subscribe({
       next: value => {
         let pushOnlyList = [];
@@ -32,7 +33,7 @@ export class RecentActivitiesComponent implements OnInit {
 
         this.activities = pushOnlyList.map(e => {
 
-          return {...e, count: 1+1};
+          return {...e, count: 1+1, order: order++};
         });
         this.collectionSize = pushOnlyList.length;
 
@@ -40,16 +41,6 @@ export class RecentActivitiesComponent implements OnInit {
       },
       error: e => console.log
     })
-  }
-
-  refreshCountries() {
-    this.activities = this.activities
-      .map((country:any, i:any) => {
-        console.log({id: i + 1, ...country});
-
-        ({id: i + 1, ...country})
-      })
-      .slice((this.page - 1) * this.pageSize, (this.page - 1) * this.pageSize + this.pageSize);
   }
 
 }

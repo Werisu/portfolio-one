@@ -1,0 +1,13 @@
+.recent-activities{
+  position: relative;
+  height: 400px;
+}
+
+.pagination{
+  position: absolute;
+  bottom: 0;
+}
+
+.page-link{
+  padding: 3px!important;
+}
