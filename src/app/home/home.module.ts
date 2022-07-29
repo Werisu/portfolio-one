@@ -1,3 +1,4 @@
+import { CertificatesAndAwardsModule } from './certificates-and-awards/certificates-and-awards.module';
 import { RecentActivitiesModule } from './recent-activities/recent-activities.module';
 import { ModServicesModule } from './mod-services/mod-services.module';
 import { WorksContributionsModule } from './works-contributions/works-contributions.module';
@@ -19,7 +20,8 @@ import { HeaderModule } from './header/header.module';
     HeaderModule,
     WorksContributionsModule,
     ModServicesModule,
-    RecentActivitiesModule
+    RecentActivitiesModule,
+    CertificatesAndAwardsModule
   ],
   exports: [
     HomeComponent
