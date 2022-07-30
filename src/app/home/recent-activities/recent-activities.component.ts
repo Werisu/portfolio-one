@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as moment from 'moment';
 import { GithubService } from 'src/app/services/github.service';
 
 @Component({
@@ -12,6 +13,8 @@ export class RecentActivitiesComponent implements OnInit {
   page = 1;
   pageSize = 4;
   collectionSize:any;
+  moment = moment;
+  dateNow = moment(new Date());
 
   constructor(private githubService: GithubService) { }
 
