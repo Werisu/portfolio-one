@@ -4,3 +4,8 @@
   transform: matrix(-1, 0, 0, 1, 0, 0);
   height: 100vh;
 }
+
+.activities-certificates{
+  display: flex;
+  justify-content: space-between;
+}
