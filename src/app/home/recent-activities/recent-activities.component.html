@@ -1,23 +1,70 @@
 <h3>Atividades Recentes</h3>
 
 <div class="recent-activities">
-  <div class="d-flex text-muted pt-3" *ngFor="let activity of activities | slice: (page-1) * pageSize : page * pageSize">
-    <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"></rect><text x="25%" y="50%" fill="#ffffff" dy=".3em">{{activity.actor.login[0]}}</text></svg>
+  <div
+    class="d-flex text-muted pt-3"
+    *ngFor="
+      let activity of activities | slice: (page - 1) * pageSize:page * pageSize
+    "
+  >
+    <svg
+      class="bd-placeholder-img flex-shrink-0 me-2 rounded"
+      width="32"
+      height="32"
+      xmlns="http://www.w3.org/2000/svg"
+      role="img"
+      aria-label="Placeholder: 32x32"
+      preserveAspectRatio="xMidYMid slice"
+      focusable="false"
+    >
+      <title>Placeholder</title>
+      <rect width="100%" height="100%" fill="#007bff"></rect>
+      <text x="25%" y="50%" fill="#ffffff" dy=".3em">
+        {{ activity.actor.login[0] }}
+      </text>
+    </svg>
     <!-- <img [src]="activity.actor.avatar_url" class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" alt="avatar"> -->
 
     <p class="pb-3 mb-0 small lh-sm border-bottom">
-      <strong class="d-block text-gray-dark"><!--@{{activity.actor.display_login}}-->{{activity.type == 'PushEvent' ? 'Push' : activity.payload?.ref_type ?? 'started'}} - {{activity.type == 'PushEvent' ? activity.payload?.commits[0].message : activity.payload?.description ?? 'sem descrição'}}</strong>
+      <strong class="d-block text-gray-dark"
+        ><!--@{{activity.actor.display_login}}-->{{
+          activity.type == "PushEvent"
+            ? "Push"
+            : activity.payload?.ref_type ?? "started"
+        }}
+        -
+        {{
+          activity.type == "PushEvent"
+            ? activity.payload?.commits[0].message
+            : activity.payload?.description ?? "sem descrição"
+        }}</strong
+      >
 
-      {{moment(activity.created_at).fromNow()}}
+      {{ moment(activity.created_at).fromNow() }}
     </p>
   </div>
 
   <!-- <ngb-pagination [collectionSize]="collectionSize" [pageSize]="pageSize" [(page)]="page" (pageChange)="refreshCountries()" aria-label="Default pagination"></ngb-pagination> -->
   <div class="pagination mt-4 d-flex justify-content-center">
-    <ngb-pagination class="pagb" [(page)]="page" [pageSize]="pageSize" [collectionSize]="activities.length">
-      <ng-template ngbPaginationPrevious><span class="material-icons icon-left">arrow_back_ios</span></ng-template>
-      <ng-template ngbPaginationNext><span class="material-icons icon-rigth">arrow_forward_ios</span></ng-template>
-      <ng-template ngbPaginationNumber let-page><span class="pages">{{ page }}</span></ng-template>
+    <ngb-pagination
+      class="pagb"
+      [(page)]="page"
+      [pageSize]="pageSize"
+      [collectionSize]="activities.length"
+    >
+      <ng-template ngbPaginationPrevious
+        ><span class="material-icons icon-left"
+          >arrow_back_ios</span
+        ></ng-template
+      >
+      <ng-template ngbPaginationNext
+        ><span class="material-icons icon-rigth"
+          >arrow_forward_ios</span
+        ></ng-template
+      >
+      <ng-template ngbPaginationNumber let-page
+        ><span class="pages">{{ page }}</span></ng-template
+      >
     </ngb-pagination>
   </div>
 </div>
